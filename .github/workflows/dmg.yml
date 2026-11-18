@@ -5,7 +5,7 @@ on:
     branches: [main]
 jobs:
   dmg:
-    runs-on: macos-latest
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
       - run: bash make_dmg.sh
