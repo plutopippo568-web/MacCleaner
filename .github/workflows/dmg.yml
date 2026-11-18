@@ -1,0 +1,15 @@
+name: Build DMG
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  dmg:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash make_dmg.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MacCleaner-dmg
+          path: MacCleaner.dmg
